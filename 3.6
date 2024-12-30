@@ -1,19 +1,19 @@
--- Création d'un script qui télécharge et exécute un code externe depuis un lien
+-- Create a script that downloads and executes external code from a link
 
-local link = "https://raw.githubusercontent.com/Jfdedit3/Jfdedit3/refs/heads/main/Mada%20hub%20v3.6" -- Lien du script à exécuter
+local link = "https://raw.githubusercontent.com/Jfdedit3/Jfdedit3/refs/heads/main/Mada%20hub%20v3.6" -- Link to the script to execute
 
--- Fonction pour télécharger et exécuter le script à partir du lien
+-- Function to download and execute the script from the link
 local function executeScriptFromLink(url)
-    local success, result = pcall(function()
-        local scriptSource = game:HttpGet(url)  -- Récupérer le contenu du script
-        loadstring(scriptSource)()  -- Exécuter le script téléchargé
-    end)
+local success, result = pcall(function()
+local scriptSource = game:HttpGet(url) -- Retrieve the content of the script
+loadstring(scriptSource)() -- Execute the downloaded script
+end)
 
-    -- Si une erreur se produit, afficher un message
-    if not success then
-        warn("Erreur lors de l'exécution du script: " .. result)
-    end
+-- If an error occurs, display a message
+if not success then
+warn("Error executing script: " .. result)
+end
 end
 
--- Lancer l'exécution du script depuis le lien
-executeScriptFromLink(link)
+-- Launch the execution of the script from the link
+executeScriptFromLink(link) 
